@@ -30,7 +30,7 @@ Build a two-stage system that:
 
 ## Current Status
 
-Planning and project governance are in place. The segmentation branch now has a frozen baseline in code, and implementation continues under the BMAD and Ruflo workflow defined in [AGENTS.md](./AGENTS.md).
+Planning and project governance are in place. Both classification and segmentation now have frozen baselines in code, and implementation continues under the BMAD and Ruflo workflow defined in [AGENTS.md](./AGENTS.md).
 
 ## Repository Structure
 
@@ -61,3 +61,10 @@ python segmentation\run_local_inference.py --image "D:\path\to\ct_slice.jpg"
 ```
 
 The checkpoint remains private; only the code and lightweight docs belong in GitHub.
+
+The classification pipeline can also be tested locally without committing its checkpoint:
+
+```powershell
+$env:STROKE_CT_CLASSIFICATION_CHECKPOINT="D:\path\to\classifier_best_efficientnet_b0.pth"
+python classification\run_local_inference.py --image "D:\path\to\ct_slice.jpg"
+```
